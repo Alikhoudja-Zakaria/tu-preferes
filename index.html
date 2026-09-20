@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Tu Préfères 🔥</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particules de fond -->
+    <div class="bg-particles" aria-hidden="true">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Écran d'accueil -->
+    <div id="landing-screen" class="screen">
+        <div class="landing-content">
+            <div class="logo-icon">🤮</div>
+            <h1 class="neon-title">TU PRÉFÈRES</h1>
+            <p class="tagline">Le jeu le plus déjanté du monde</p>
+            <div class="landing-stats">
+                <div class="stat">
+                    <span class="stat-number">500</span>
+                    <span class="stat-label">questions</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">0%</span>
+                    <span class="stat-label">de limites</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">déjanté</span>
+                </div>
+            </div>
+            <button id="btn-jouer" class="neon-button">
+                <span>JOUER</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Écran de jeu -->
+    <div id="game-screen" class="screen hidden">
+        <div class="game-header">
+            <h2 class="small-title">TU PRÉFÈRES</h2>
+            <div class="header-right">
+                <div id="question-counter" class="counter">1 / 500</div>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div class="card">
+                <p class="card-prompt">Tu préfères...</p>
+                
+                <div class="options-wrapper">
+                    <button id="btn-option-a" class="option-btn option-a">
+                        <div class="option-label">A</div>
+                        <div class="option-content">
+                            <span class="option-text" id="text-option-a">Option A</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="percentage-bar" id="bar-option-a"></div>
+                        </div>
+                        <div class="percentage-text" id="pct-option-a"></div>
+                    </button>
+
+                    <div class="ou-badge">OU</div>
+
+                    <button id="btn-option-b" class="option-btn option-b">
+                        <div class="option-label">B</div>
+                        <div class="option-content">
+                            <span class="option-text" id="text-option-b">Option B</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="percentage-bar" id="bar-option-b"></div>
+                        </div>
+                        <div class="percentage-text" id="pct-option-b"></div>
+                    </button>
+                </div>
+
+                <div id="reaction-message" class="reaction hidden"></div>
+                
+                <button id="btn-next" class="next-btn hidden">
+                    <span>Question Suivante</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Barre de progression en bas -->
+        <div class="progress-bar-container">
+            <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <!-- Écran de fin -->
+    <div id="end-screen" class="screen hidden">
+        <div class="landing-content">
+            <div class="logo-icon">🏆</div>
+            <h1 class="neon-title">TERMINÉ !</h1>
+            <p class="tagline">T'as survécu aux 500 questions<br>T'es un vrai champion du pire</p>
+            <button id="btn-rejouer" class="neon-button">
+                <span>REJOUER</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
