@@ -1,0 +1,13 @@
+{
+  "name": "Tu Préfères",
+  "short_name": "Tu Préfères",
+  "description": "Le jeu le plus déjanté du monde — 500 questions sans filtre",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07060b",
+  "theme_color": "#07060b",
+  "orientation": "portrait",
+  "lang": "fr",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}

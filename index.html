@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#0a0a0f">
+    <meta name="theme-color" content="#07060b">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Tu Préfères">
+    <meta name="application-name" content="Tu Préfères">
+    <meta name="description" content="Le jeu le plus déjanté du monde — 500 questions sans filtre">
+    <link rel="manifest" href="manifest.json">
     <title>Tu Préfères 🔥</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +26,11 @@
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
+    </div>
+
+    <!-- Image surprise qui pop de temps en temps -->
+    <div id="surprise-img" class="surprise-container" aria-hidden="true">
+        <img src="assia.jpg" alt="" class="surprise-photo">
     </div>
 
     <!-- Écran d'accueil -->
@@ -49,6 +59,7 @@
                 <span>JOUER</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </button>
+            <p class="made-for">fait pour Assia ❤️</p>
         </div>
     </div>
 
@@ -116,6 +127,53 @@
                 <span>REJOUER</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
             </button>
+            <p class="made-for">fait pour Assia ❤️</p>
+        </div>
+    </div>
+
+    <!-- Bottom nav bar (app feel) -->
+    <nav id="bottom-nav" class="bottom-nav hidden">
+        <button class="nav-item active" id="nav-play" title="Jouer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Jouer</span>
+        </button>
+        <button class="nav-item" id="nav-stats" title="Stats">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <span>Stats</span>
+        </button>
+        <button class="nav-item" id="nav-reset" title="Reset">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            <span>Reset</span>
+        </button>
+    </nav>
+
+    <!-- Stats modal -->
+    <div id="stats-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content card">
+            <h3 class="modal-title">Tes Stats 📊</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-card-number" id="stat-answered">0</span>
+                    <span class="stat-card-label">Répondues</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-number" id="stat-remaining">500</span>
+                    <span class="stat-card-label">Restantes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-number" id="stat-percent">0%</span>
+                    <span class="stat-card-label">Complété</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-number" id="stat-streak">0</span>
+                    <span class="stat-card-label">Série</span>
+                </div>
+            </div>
+            <button class="next-btn" id="close-stats">
+                <span>Fermer</span>
+            </button>
+            <p class="made-for" style="margin-top: 16px;">fait pour Assia ❤️</p>
         </div>
     </div>
 
